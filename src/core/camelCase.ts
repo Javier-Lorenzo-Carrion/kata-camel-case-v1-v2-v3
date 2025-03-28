@@ -27,3 +27,7 @@ export function toUpperCamelCaseV2(text:string): string{
     let ArrayToText: string = lettersToArray.join("");
     return ArrayToText.charAt(0).toUpperCase() + ArrayToText.substring(1);
 }
+
+export function toUpperCamelCaseV3(text:string): string{
+    return "foo";
+}
