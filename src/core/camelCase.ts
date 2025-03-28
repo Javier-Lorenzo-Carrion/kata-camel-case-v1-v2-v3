@@ -12,14 +12,18 @@ export function toUpperCamelCaseV1(text: string): string {
 
 export function toUpperCamelCaseV2(text:string): string{
     if(text === " ") return text;
-    let formatedText = "";
+    let newArray: string [] = [];
     for (let i = 0; i < text.length; i++) {
-        if(text.charAt(i) === "-" || text.charAt(i) === " " || text.charAt(i) === "_"){
-            formatedText = formatedText + text.charAt(i+1).toUpperCase();
-            i++;
-        } else{
-            formatedText += text.charAt(i).toLowerCase();
+        if(text.charAt(i) === "-" || text.charAt(i) === "_" || text.charAt(i) === " "){
+            if(text.charAt(i+1) === "-" || text.charAt(i+1) === "_" || text.charAt(i+1) === " "){
+            } else {
+                newArray.push(text.charAt(i+1).toUpperCase());
+                i++;
+            }
+        } else {
+            newArray.push(text.charAt(i).toLowerCase());
         }
     }
-    return formatedText.charAt(0).toUpperCase() + formatedText.substring(1);
+    let finalConversion: string = newArray.join("");
+    return finalConversion.charAt(0).toUpperCase() + finalConversion.substring(1);
 }
