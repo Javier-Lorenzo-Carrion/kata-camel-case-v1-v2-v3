@@ -1,7 +1,14 @@
-export function toUpperCamelCaseV2(text: string): string{
-    let restOfLetters: string = "";
-    for(let i: number = 1; i < text.length; i++){
-        restOfLetters = restOfLetters + text.charAt(i).toLowerCase();
+export function toUpperCamelCaseV2(text:string): string{
+    if(text === " ") return text;
+    let newText = "";
+    for (let i = 0; i < text.length; i++) {
+        if(text.charAt(i) === "-" || text.charAt(i) === " "){
+            newText = newText + text.charAt(i+1).toUpperCase();
+            i++;
+        } else{
+            newText = newText + text.charAt(i).toLowerCase();
+        }
     }
-    return text.charAt(0).toUpperCase() + restOfLetters;
+    newText = newText.charAt(0).toUpperCase() + newText.substring(1);
+    return newText;
 }
