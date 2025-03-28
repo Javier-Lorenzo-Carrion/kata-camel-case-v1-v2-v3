@@ -1,4 +1,5 @@
 import {toUpperCamelCaseV2} from "../core/camelCaseV2";
+import {toUpperCamelCaseV1} from "../core/camelCaseV1";
 
 describe("To upper camel version 2 case should", () => {
     it("return a string: when the initial sentence is:", () => {
@@ -18,5 +19,8 @@ describe("To upper camel version 2 case should", () => {
     });
     it("return a string: HolaSoyJavier when the initial sentence is: hola_SOY-JAVIER", ()=>{
         expect(toUpperCamelCaseV2("hola_SOY-JAVIER")).toBe("HolaSoyJavier");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV1("hola SOY-_JAVIER")).toBe("HolaSoyJavier");
     });
 })
