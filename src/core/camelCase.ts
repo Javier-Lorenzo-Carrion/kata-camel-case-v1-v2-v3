@@ -29,5 +29,5 @@ export function toUpperCamelCaseV2(text:string): string{
 }
 
 export function toUpperCamelCaseV3(text:string): string{
-    return "foo";
+    return "";
 }
