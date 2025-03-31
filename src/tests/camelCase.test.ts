@@ -5,7 +5,7 @@ describe("To upper camel case version 1 should ", () => {
         expect(toUpperCamelCaseV1("")).toBe("");
     });
     it("return a string: when the initial sentence is: ", ()=>{
-        expect(toUpperCamelCaseV1(" ")).toBe(" ");
+        expect(toUpperCamelCaseV1(" ")).toBe("");
     });
     it("return a string: Hola when the initial sentence is: hola", ()=>{
         expect(toUpperCamelCaseV1("hola")).toBe("Hola");
@@ -24,6 +24,12 @@ describe("To upper camel case version 1 should ", () => {
     });
     it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
         expect(toUpperCamelCaseV1("- _Hola SOY-_JAVIER")).toBe("HolaSoyJavier");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV1("    ")).toBe("");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV1("    JavIer -_ho  la  ")).toBe("JavierHola");
     });
 })
 
@@ -52,6 +58,12 @@ describe("To upper camel case version 2 should", () => {
     it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
         expect(toUpperCamelCaseV2("- _Hola SOY-_JAVIER")).toBe("HolaSoyJavier");
     });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV2("    ")).toBe("");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV2("    JavIer -_ho  la  ")).toBe("JavierHola");
+    });
 })
 
 describe("To upper camel case version 3 should", () => {
@@ -78,5 +90,11 @@ describe("To upper camel case version 3 should", () => {
     });
     it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
         expect(toUpperCamelCaseV3("- _Hola SOY-_JAVIER")).toBe("HolaSoyJavier");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV3("    ")).toBe("");
+    });
+    it("return a string: HolaSoyJavier when the initial sentence is: hola SOY-_JAVIER", ()=>{
+        expect(toUpperCamelCaseV3("    JavIer -_ho  la  ")).toBe("JavierHola");
     });
 })

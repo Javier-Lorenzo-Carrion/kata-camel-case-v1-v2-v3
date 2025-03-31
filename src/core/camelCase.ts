@@ -1,5 +1,4 @@
 export function toUpperCamelCaseV1(text: string): string {
-    if(text === " ") return text;
     let separatedWordsByHyphen:string [] = text.split(/[-_\s]+/);
     let joinedText: string = "";
     for(let i = 0; i < text.split(/[-_\s]+/).length; i++){
@@ -11,7 +10,6 @@ export function toUpperCamelCaseV1(text: string): string {
 }
 
 export function toUpperCamelCaseV2(text:string): string{
-    if(text === " ") return text;
     let lettersToArray: string [] = [];
     for (let i = 0; i < text.length; i++) {
         if(text.charAt(i) === "-" || text.charAt(i) === "_" || text.charAt(i) === " "){
@@ -29,7 +27,6 @@ export function toUpperCamelCaseV2(text:string): string{
 }
 
 export function toUpperCamelCaseV3(text:string): string{
-    if(text === " ") return text;
     let searchedValues: RegExp = /(?:^|[-_\s]+)(\w)/g;
     return text.toLowerCase().replace(searchedValues, (_, firstLetter) => firstLetter.toUpperCase());
 }
