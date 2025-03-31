@@ -30,8 +30,6 @@ export function toUpperCamelCaseV2(text:string): string{
 
 export function toUpperCamelCaseV3(text:string): string{
     if(text === " ") return text;
-    let textInLowerCase: string = text.toLowerCase();
     let searchedValues: RegExp = /(?:^|[-_\s]+)(\w)/g;
-    let formatedText: string = textInLowerCase.replace(searchedValues, (_, firstLetter) => firstLetter.toUpperCase());
-    return formatedText;
+    return text.toLowerCase().replace(searchedValues, (_, firstLetter) => firstLetter.toUpperCase());
 }
