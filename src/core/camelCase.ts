@@ -30,6 +30,7 @@ export function toUpperCamelCaseV2(text:string): string{
 
 export function toUpperCamelCaseV3(text:string): string{
     if(text === " ") return text;
-    let formatedText: string = text.charAt(0).toUpperCase() + text.substring(1);
+    let textInLowerCase: string = text.toLowerCase();
+    let formatedText: string = textInLowerCase.charAt(0).toUpperCase() + textInLowerCase.substring(1);
     return formatedText;
 }
