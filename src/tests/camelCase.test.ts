@@ -58,4 +58,7 @@ describe("To upper camel case version 3 should", () => {
     it("return a string: when the initial sentence is:", ()=>{
         expect(toUpperCamelCaseV3("")).toBe("");
     });
+    it("version 2 should return a string:  when the initial sentence is: ", ()=>{
+        expect(toUpperCamelCaseV3(" ")).toBe(" ");
+    });
 })
