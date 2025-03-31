@@ -28,5 +28,8 @@ export function toUpperCamelCaseV2(text:string): string{
 
 export function toUpperCamelCaseV3(text:string): string{
     let searchedValues: RegExp = /(?:^|[-_\s]+)(\w)/g;
-    return text.toLowerCase().replace(searchedValues, (_, firstLetter) => firstLetter.toUpperCase());
+    return text
+        .trim()
+        .toLowerCase()
+        .replace(searchedValues, (_, firstLetter) => firstLetter.toUpperCase());
 }
